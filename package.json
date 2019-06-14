@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/NoahT/npm-fourier/issues"
   },
-  "homepage": "https://github.com/NoahT/npm-fourier#readme"
+  "homepage": "https://github.com/NoahT/npm-fourier#readme",
+  "devDependencies": {
+    "npm-complex": "^1.0.1"
+  }
 }
