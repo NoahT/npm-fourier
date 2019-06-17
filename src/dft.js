@@ -14,26 +14,28 @@ let dft = function(samp) {
   if(!(samp instanceof Array)) {
     throw new TypeError(`${samp} is not an instance of Array!`);
   }
+  // 2D array, since we keep track of real and imaginary components
+  // from DFT
   let F = [],
   N = samp.length,
   // complex element in the form [re, im]. this algorithm
   // uses Euler's instead to compute the real and imaginary
   // components
-  comp,
+  re, im,
   theta;
   // number of given samples will be the number of frequency bins
   for(let n = 0; n < N; n++) {
-    comp = [0, 0];
+    re = im = 0;
     for(let k = 0; k < N; k++) {
       theta = (2 * Math.PI * n * k) / N;
       // real correlation coefficient
-      comp[0] += (samp[k] * Math.cos(theta));
-      // imaginary correlation coefficient
-      comp[1] -= (samp[k] * Math.sin(theta));
+      re = (samp[k] * Math.cos(theta));
+      // imaginary component
+      im -= (samp[k] * Math.sin(theta));
     }
-    F[n] = comp;
+    F[n] = [re, im];
   }
-  return freq;
+  return F;
 }
 
 module.exports = {
