@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/NoahT/npm-fourier#readme",
   "devDependencies": {
-    "npm-complex": "^1.0.1"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "npm-complex": "^1.1.2",
   }
 }
