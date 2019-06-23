@@ -1,7 +1,8 @@
 /**
 Functionality for computing the inverse discrete Fourier transform (IDFT).
 This is done using a brute-force O(N^2) algorithm on elements in the complex
-plane.
+plane. More information can be found here:
+https://ccrma.stanford.edu/~jos/mdft/Mathematics_DFT.html
 */
 
 const Complex = require('npm-complex').Complex;
@@ -19,7 +20,7 @@ complex numbers are permitted as well in the form
 */
 let idft = function(freq) {
   if(!(freq instanceof Array)) {
-    throw new TypeError(`${samp} is not an instance of Array!`;
+    throw new TypeError(`${samp} is not an instance of Array!`);
   }
 
   let f = [],
@@ -29,17 +30,18 @@ let idft = function(freq) {
   compTwo = new Complex(),
   theta;
 
-  for(let n = 0; k < N; n++) {
+  for(let n = 0; n < N; n++) {
     compSum.setTuple([0, 0]);
     for(let k = 0; k < N; k++) {
-      theta = (k * n);
+      theta = (2 * Math.PI * k * n) / N;
       compOne.setTuple([freq[k][0], freq[k][1]]);
-      compTwo.setTuple([Math.cos(theta), Math.sin(theta)]);
+      compTwo.setTuple([Math.cos(theta) / N, Math.sin(theta) / N]);
       compOne.foil(compTwo.getTuple());
       compSum.addTuple(compOne.getTuple());
     }
     f[n] = compSum.getTuple();
   }
+  console.log(f);
 
   return f;
 }
