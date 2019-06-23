@@ -1,7 +1,8 @@
 /**
 Functionality for computing the discrete Fourier transform (DFT).
 This is done using a brute-force O(N^2) algorithm on the complex
-plane.
+plane. More information can be found here:
+https://ccrma.stanford.edu/~jos/mdft/Mathematics_DFT.html
 */
 
 const Complex = require('npm-complex').Complex;
@@ -15,6 +16,7 @@ our time-based domain may also encapsulate complex
 numbers in the form [re, im].
 
 @param {number[][]} samp
+@return {number[][]}
 */
 let dft = function(samp) {
   // guard clause to keep valid samples
