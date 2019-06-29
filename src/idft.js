@@ -41,8 +41,6 @@ let idft = function(freq) {
     }
     f[n] = compSum.getTuple();
   }
-  console.log(f);
-
   return f;
 }
 
