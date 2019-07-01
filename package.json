@@ -1,6 +1,6 @@
 {
   "name": "npm-fourier",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Module for brute-force calculations of the discrete Fourier transform and inverse discrete Fourier transform.",
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,14 @@
     "dft",
     "brute-force",
     "discrete",
+    "one-dimensional",
     "frequency",
     "transform"
   ],
   "author": "NoahT (noah.teshima@gmail.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NoahT/npm-fourier/issues"
+    "url": "https://github.com/NoahT/npm-fourier/blob/master/CONTRIBUTING.md"
   },
   "homepage": "https://github.com/NoahT/npm-fourier#readme",
   "devDependencies": {
