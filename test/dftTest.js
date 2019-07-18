@@ -104,7 +104,7 @@ describe('Discrete Fourier Transform/Inverse Discrete Fourier Transform', functi
 
 
 function deepEqualArrayDelta(act, exp, delta) {
-  for(let i in act) {
+  for(let i = 0; i < act.length; i++) {
     assert.closeTo(act[i][0], exp[i][0], (delta === undefined) ? 0 : delta);
     assert.closeTo(act[i][1], exp[i][1], (delta === undefined) ? 0 : delta);
   }
